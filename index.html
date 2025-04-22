@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello-like Kanban</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">
+                <span class="material-icons">dashboard</span>
+                Meu Kanban
+            </h1>
+            <button class="add-list-btn" onclick="toggleListForm(true)">
+                <span class="material-icons">add</span>
+                Adicionar Lista
+            </button>
+        </div>
+    </header>
+
+    <main class="board" id="board">
+        <!-- Listas existentes serão adicionadas aqui via JavaScript -->
+    </main>
+
+    <!-- Template para nova lista -->
+    <template id="listTemplate">
+        <div class="list">
+            <div class="list-header">
+                <div class="list-title" contenteditable="true">Nova Lista</div>
+                <button class="delete-list">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="card-container"></div>
+            <div class="add-card-area">
+                <button class="add-card-btn">
+                    <span class="material-icons">add</span>
+                    Adicionar um card
+                </button>
+                <form class="card-form" style="display: none;">
+                    <textarea placeholder="Digite um título para este card..." rows="3"></textarea>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Adicionar Card</button>
+                        <button type="button" class="btn-icon close-form">
+                            <span class="material-icons">close</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
